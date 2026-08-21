@@ -3,11 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RESPONS</title>
+
+  <title>respons</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
     body {
       margin: 0;
-      font-family: Georgia, serif;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
       background: #f8f5ee;
       color: #4b3a2f;
       text-align: center;
@@ -19,55 +30,92 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 40px 20px;
+      padding: 48px 20px;
     }
 
-    h1 {
-      font-size: 64px;
-      letter-spacing: 12px;
-      margin: 0 0 20px;
-      font-weight: normal;
+    /* LOGO */
+    .logo {
+      margin: 0 0 24px;
+      font-family: Baskerville, "Baskerville Old Face", "Times New Roman", serif;
+      font-size: clamp(68px, 8vw, 94px);
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: 0.02em;
     }
 
+    /* CREATE SOMETHING... */
     .tagline {
-      font-size: 22px;
+      margin-bottom: 40px;
+      font-size: clamp(19px, 2vw, 24px);
+      line-height: 1.4;
       font-style: italic;
-      margin-bottom: 40px;
     }
 
+    /* HOVEDTEKST */
     .story {
-      max-width: 650px;
-      font-size: 24px;
-      line-height: 1.6;
-      margin-bottom: 40px;
+      max-width: 680px;
+      margin-bottom: 42px;
+      font-size: clamp(21px, 2.3vw, 27px);
+      line-height: 1.55;
     }
 
+    /* KOMMER SNART */
     .coming {
-      font-size: 14px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
+      width: min(345px, 70vw);
       border-top: 1px solid #9aa58a;
       padding-top: 20px;
+      font-size: 13px;
+      line-height: 1.6;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    /* MOBIL */
+    @media (max-width: 600px) {
+      .hero {
+        padding: 36px 22px;
+      }
+
+      .logo {
+        margin-bottom: 20px;
+      }
+
+      .tagline {
+        margin-bottom: 32px;
+      }
+
+      .story {
+        margin-bottom: 36px;
+      }
+
+      .coming {
+        font-size: 11px;
+        letter-spacing: 0.18em;
+      }
     }
   </style>
 </head>
 
 <body>
-  <section class="hero">
-    <h1>RESPONS</h1>
+
+  <main class="hero">
+
+    <h1 class="logo">respons</h1>
 
     <div class="tagline">
       Create something worth remembering.
     </div>
 
     <div class="story">
-      Fordi en historie ikke slutter når den blir fortalt.<br>
+      Fordi en historie ikke slutter når den blir fortalt.<br />
       Den fortsetter i mennesket som mottar den.
     </div>
 
     <div class="coming">
       byrespons.no · kommer snart
     </div>
-  </section>
+
+  </main>
+
 </body>
 </html>
