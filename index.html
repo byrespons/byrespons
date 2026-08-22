@@ -1,121 +1,539 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>respons</title>
+  <title>RESPONS – Kommer snart</title>
+  <meta
+    name="description"
+    content="RESPONS – Create something worth remembering. Kommer snart."
+  >
 
   <style>
+
+    /* -------------------------
+       GRUNNOPPSETT
+    ------------------------- */
+
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     html,
     body {
-      margin: 0;
+      width: 100%;
       min-height: 100%;
     }
 
     body {
       font-family: Georgia, "Times New Roman", serif;
-      background: #f8f5ee;
-      color: #4b3a2f;
+      color: #4b382d;
+      background-color: #f5eee5;
+    }
+
+
+    /* -------------------------
+       HOVEDSIDEN
+    ------------------------- */
+
+    .page {
+      position: relative;
+
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100svh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      overflow: hidden;
+
+      padding: 60px 30px;
+
+      background-image: url("background.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+
+    /* Et veldig svakt lag over bildet
+       gjør teksten lettere å lese */
+
+    .page::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background: rgba(247, 240, 231, 0.05);
+
+      pointer-events: none;
+    }
+
+
+    /* -------------------------
+       INNHOLD
+    ------------------------- */
+
+    .content {
+      position: relative;
+      z-index: 1;
+
+      width: 100%;
+      max-width: 1000px;
+
       text-align: center;
     }
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 48px 20px;
-    }
 
-    /* LOGO */
+    /* -------------------------
+       RESPONS-LOGO
+    ------------------------- */
+
     .logo {
-      margin: 0 0 24px;
-      font-family: Baskerville, "Baskerville Old Face", "Times New Roman", serif;
-      font-size: clamp(68px, 8vw, 94px);
-      line-height: 1;
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: clamp(80px, 10vw, 155px);
       font-weight: 400;
-      letter-spacing: 0.02em;
+
+      line-height: 0.9;
+
+      letter-spacing: -5px;
+
+      color: #4b382d;
+
+      text-transform: lowercase;
     }
 
-    /* CREATE SOMETHING... */
+
+    /* -------------------------
+       ENGELSK TEKST
+    ------------------------- */
+
     .tagline {
-      margin-bottom: 40px;
-      font-size: clamp(19px, 2vw, 24px);
-      line-height: 1.4;
+      margin-top: 42px;
+
+      font-size: clamp(21px, 2.1vw, 34px);
+
       font-style: italic;
+      font-weight: 600;
+
+      line-height: 1.4;
+
+      color: #4b382d;
     }
 
-    /* HOVEDTEKST */
+
+    /* -------------------------
+       HOVEDTEKST
+    ------------------------- */
+
     .story {
-      max-width: 680px;
-      margin-bottom: 42px;
-      font-size: clamp(21px, 2.3vw, 27px);
+      max-width: 950px;
+
+      margin: 80px auto 0;
+
+      font-size: clamp(22px, 2.4vw, 38px);
+
+      font-weight: 600;
+
       line-height: 1.55;
+
+      color: #4b382d;
     }
 
-    /* KOMMER SNART */
-    .coming {
-      width: min(345px, 70vw);
-      border-top: 1px solid #9aa58a;
-      padding-top: 20px;
-      font-size: 13px;
-      line-height: 1.6;
-      letter-spacing: 0.25em;
+
+    /* -------------------------
+       GRØNN LINJE
+    ------------------------- */
+
+    .line {
+      width: min(550px, 70%);
+
+      height: 1px;
+
+      margin: 72px auto 35px;
+
+      background-color: #82906f;
+    }
+
+
+    /* -------------------------
+       KOMMER SNART
+    ------------------------- */
+
+    .coming-soon {
+      font-size: clamp(13px, 1.3vw, 19px);
+
+      letter-spacing: 7px;
+
       text-transform: uppercase;
+
+      color: #4b382d;
     }
 
-    /* MOBIL */
-    @media (max-width: 600px) {
-      .hero {
-        padding: 36px 22px;
+
+    /* -------------------------
+       SOSIALE MEDIER
+    ------------------------- */
+
+    .socials {
+      margin-top: 40px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 25px;
+
+      flex-wrap: wrap;
+    }
+
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 9px;
+
+      color: #4b382d;
+
+      text-decoration: none;
+
+      font-family: Arial, Helvetica, sans-serif;
+
+      font-size: 11px;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+    }
+
+
+    .social-link:hover {
+      opacity: 0.6;
+      transform: translateY(-2px);
+    }
+
+
+    .social-divider {
+      font-size: 13px;
+
+      color: #4b382d;
+
+      opacity: 0.4;
+    }
+
+
+    /* -------------------------
+       INSTAGRAM-IKON
+    ------------------------- */
+
+    .instagram-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+
+    /* -------------------------
+       TIKTOK-IKON
+    ------------------------- */
+
+    .tiktok-icon {
+      width: 20px;
+      height: 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+
+    /* -------------------------
+       FOOTER
+    ------------------------- */
+
+    .footer {
+      position: absolute;
+
+      bottom: 20px;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 1;
+
+      text-align: center;
+
+      font-family: Arial, Helvetica, sans-serif;
+
+      font-size: 9px;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      color: #4b382d;
+
+      opacity: 0.45;
+    }
+
+
+    /* -------------------------
+       MOBIL
+    ------------------------- */
+
+    @media (max-width: 700px) {
+
+      .page {
+        padding: 45px 22px 80px;
+
+        background-position: center center;
       }
 
       .logo {
-        margin-bottom: 20px;
+        font-size: clamp(70px, 23vw, 105px);
+
+        letter-spacing: -4px;
       }
 
       .tagline {
-        margin-bottom: 32px;
+        margin-top: 28px;
+
+        font-size: 20px;
+
+        line-height: 1.45;
       }
 
       .story {
-        margin-bottom: 36px;
+        margin-top: 55px;
+
+        font-size: 21px;
+
+        line-height: 1.55;
       }
 
-      .coming {
-        font-size: 11px;
-        letter-spacing: 0.18em;
+      .story br {
+        display: none;
       }
+
+      .line {
+        width: 70%;
+
+        margin-top: 55px;
+
+        margin-bottom: 28px;
+      }
+
+      .coming-soon {
+        font-size: 12px;
+
+        letter-spacing: 4px;
+
+        line-height: 1.8;
+      }
+
+      .socials {
+        margin-top: 32px;
+
+        gap: 16px;
+      }
+
+      .social-link {
+        font-size: 10px;
+
+        letter-spacing: 2px;
+      }
+
     }
+
+
+    /* -------------------------
+       VELDIG SMÅ MOBILER
+    ------------------------- */
+
+    @media (max-width: 400px) {
+
+      .logo {
+        font-size: 72px;
+      }
+
+      .story {
+        font-size: 19px;
+      }
+
+      .social-divider {
+        display: none;
+      }
+
+      .socials {
+        flex-direction: column;
+
+        gap: 16px;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
 
-  <main class="hero">
 
-    <h1 class="logo">respons</h1>
+  <main class="page">
 
-    <div class="tagline">
-      Create something worth remembering.
-    </div>
 
-    <div class="story">
-      Fordi en historie ikke slutter når den blir fortalt.<br />
-      Den fortsetter i mennesket som mottar den.
-    </div>
+    <section class="content">
 
-    <div class="coming">
-      byrespons.no · kommer snart
-    </div>
+
+      <!-- LOGO -->
+
+      <h1 class="logo">
+        respons
+      </h1>
+
+
+      <!-- TAGLINE -->
+
+      <p class="tagline">
+        Create something worth remembering.
+      </p>
+
+
+      <!-- HOVEDTEKST -->
+
+      <p class="story">
+        Fordi en historie ikke slutter når den blir fortalt.<br>
+        Den fortsetter i mennesket som mottar den.
+      </p>
+
+
+      <!-- LINJE -->
+
+      <div class="line"></div>
+
+
+      <!-- KOMMER SNART -->
+
+      <p class="coming-soon">
+        byrespons.no · kommer snart
+      </p>
+
+
+      <!-- SOSIALE MEDIER -->
+
+      <div class="socials">
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+          class="social-link"
+          href="https://www.instagram.com/byrespons/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="RESPONS på Instagram"
+        >
+
+          <svg
+            class="instagram-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+
+            <rect
+              x="3"
+              y="3"
+              width="18"
+              height="18"
+              rx="5"
+            ></rect>
+
+            <circle
+              cx="12"
+              cy="12"
+              r="4"
+            ></circle>
+
+            <circle
+              cx="17.4"
+              cy="6.6"
+              r="0.9"
+              fill="currentColor"
+              stroke="none"
+            ></circle>
+
+          </svg>
+
+          <span>
+            Instagram
+          </span>
+
+        </a>
+
+
+        <!-- SKILLE -->
+
+        <span class="social-divider">
+          |
+        </span>
+
+
+        <!-- TIKTOK -->
+
+        <a
+          class="social-link"
+          href="https://www.tiktok.com/@byrespons"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="RESPONS på TikTok"
+        >
+
+          <span class="tiktok-icon">
+            ♪
+          </span>
+
+          <span>
+            TikTok
+          </span>
+
+        </a>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+      © 2026 RESPONS
+    </footer>
+
 
   </main>
+
 
 </body>
 </html>
