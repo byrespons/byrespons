@@ -3,416 +3,295 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>RESPONS – Kommer snart</title>
-
-  <meta
-    name="description"
-    content="Bøker som skaper en respons. Spørsmål verdt å svare på. Historier verdt å ta vare på."
-  >
-
+  <meta name="description" content="RESPONS lager bøker som samler historier, minner og spørsmål verdt å ta vare på. Bok 0 – Før vi møtte deg – kommer snart.">
+  <title>RESPONS – Bok 0 kommer snart</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400&display=swap"
-    rel="stylesheet"
-  >
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root{
+      --cream:#f7f2eb;
+      --cream-2:#efe7dc;
+      --paper:#fbf8f3;
+      --green:#29442d;
+      --green-soft:#6f7f64;
+      --brown:#4b3326;
+      --line:rgba(75,51,38,.16);
+      --shadow:0 18px 45px rgba(60,43,31,.12);
     }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"Montserrat",Arial,sans-serif;background:var(--cream);color:var(--brown);line-height:1.55}
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    button,input,select,textarea{font:inherit}
+    .container{width:min(1180px,92vw);margin:0 auto}
+    .serif{font-family:"Cormorant Garamond",Georgia,serif}
 
-    html {
-      scroll-behavior: smooth;
+    header{position:sticky;top:0;z-index:20;background:rgba(247,242,235,.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(75,51,38,.08)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+    .brand{font-family:"Cormorant Garamond",Georgia,serif;font-size:29px;letter-spacing:8px;text-decoration:none}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:13px}
+    .nav-links a{text-decoration:none}
+    .nav-links a:hover{opacity:.6}
+    .nav-cta{background:var(--green);color:white;padding:12px 18px;border-radius:2px;text-transform:uppercase;letter-spacing:1.5px;font-size:11px}
+
+    .hero{display:grid;grid-template-columns:1fr 1.06fr;min-height:760px;background:var(--paper)}
+    .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:64px 8vw;background:
+      radial-gradient(circle at 18% 20%,rgba(41,68,45,.08),transparent 22%),
+      linear-gradient(145deg,#e9e0d5,#f5efe7)}
+    .hero-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 25%,rgba(255,255,255,.45) 48%,transparent 70%);opacity:.55}
+    .book-cover{position:relative;z-index:1;width:min(355px,72%);box-shadow:0 28px 50px rgba(58,39,27,.22);transform:rotate(-1deg)}
+    .book-cover img{border-radius:2px}
+    .hero-copy{padding:90px clamp(36px,6vw,90px);display:flex;flex-direction:column;justify-content:center}
+    .eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--green);background:rgba(111,127,100,.16);width:max-content;padding:6px 12px;border-radius:20px}
+    h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(54px,5vw,82px);line-height:.93;font-weight:400;margin:22px 0 14px;letter-spacing:-1px}
+    .subtitle{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;margin-bottom:18px}
+    .lead{max-width:560px;font-size:15px;font-weight:300}
+    .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:32px 0}
+    .fact{border-top:1px solid var(--line);padding-top:12px;font-size:11px;line-height:1.35}
+    .coming{background:linear-gradient(120deg,#ede6db,#f8f4ee);padding:28px;margin-top:10px;border:1px solid rgba(75,51,38,.08)}
+    .coming h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;font-weight:500;letter-spacing:1px}
+    .coming p{font-size:13px;margin:6px 0 18px}
+    .button{display:inline-flex;align-items:center;justify-content:center;background:var(--green);color:white;text-decoration:none;border:none;padding:15px 24px;letter-spacing:1.8px;text-transform:uppercase;font-size:11px;cursor:pointer;transition:.2s ease}
+    .button:hover{transform:translateY(-1px);opacity:.9}
+    .button.outline{background:transparent;color:var(--brown);border:1px solid var(--brown)}
+
+    section{padding:88px 0}
+    .section-title{text-align:center;font-family:"Cormorant Garamond",Georgia,serif;font-size:46px;font-weight:400;line-height:1;margin-bottom:16px}
+    .section-intro{text-align:center;max-width:650px;margin:0 auto 44px;font-size:14px;font-weight:300}
+
+    .interest{background:linear-gradient(90deg,#ede7dd,#f5f0e8)}
+    .interest-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:58px;align-items:start}
+    .interest-copy h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:48px;line-height:1;font-weight:400;margin-bottom:18px}
+    .interest-copy p{font-size:14px;font-weight:300;max-width:400px}
+    .tiny{font-size:11px!important;margin-top:18px;opacity:.75}
+    .tally-frame{background:rgba(255,255,255,.55);border:1px solid rgba(75,51,38,.08);min-height:520px;box-shadow:0 10px 30px rgba(70,50,35,.05);overflow:hidden}
+    .tally-frame iframe{width:100%;height:620px;border:0;background:transparent}
+
+    .contents-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .content-item{padding:28px 20px;text-align:center;border-right:1px solid var(--line);font-size:12px;min-height:96px;display:flex;align-items:center;justify-content:center}
+    .content-item:nth-child(4n){border-right:none}
+    .contents-actions{display:flex;justify-content:center;gap:12px;margin-top:32px;flex-wrap:wrap}
+
+    .preview-section{background:#eee7dd;overflow:hidden}
+    .preview-wrap{position:relative}
+    .preview-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:14px 6px 28px;scrollbar-width:none}
+    .preview-track::-webkit-scrollbar{display:none}
+    .preview-card{flex:0 0 min(300px,76vw);scroll-snap-align:start}
+    .preview-card img{width:100%;aspect-ratio: .71;object-fit:cover;background:white;box-shadow:0 16px 32px rgba(65,47,35,.14)}
+    .preview-card p{text-align:center;font-size:12px;margin-top:12px}
+    .preview-arrow{position:absolute;top:45%;transform:translateY(-50%);width:42px;height:42px;border:0;border-radius:50%;background:rgba(255,255,255,.88);box-shadow:0 6px 20px rgba(0,0,0,.08);cursor:pointer;font-size:20px;z-index:2}
+    .preview-arrow.left{left:-18px}.preview-arrow.right{right:-18px}
+
+    .why{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .why h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:50px;font-weight:400;line-height:1;margin-bottom:20px}
+    .why .bigline{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;line-height:1.15;margin-bottom:18px}
+    .why p{font-size:14px;font-weight:300;max-width:560px}
+    .why-card{background:#e9e0d5;padding:48px;min-height:360px;display:flex;align-items:center;justify-content:center}
+    .why-card img{width:230px;box-shadow:var(--shadow);transform:rotate(2deg)}
+
+    .future{background:var(--paper)}
+    .future-grid{display:grid;grid-template-columns:.85fr 1fr 1fr;gap:24px;align-items:stretch}
+    .future-intro{padding:38px;background:#ece6dc}
+    .future-intro h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:42px;line-height:1;font-weight:400;margin-bottom:14px}
+    .future-intro p{font-size:13px;font-weight:300}
+    .book-tile{display:grid;grid-template-columns:145px 1fr;gap:24px;align-items:center;border:1px solid var(--line);padding:28px;background:#faf7f2}
+    .book-tile img{width:145px;aspect-ratio:.71;object-fit:cover;box-shadow:0 14px 28px rgba(70,50,35,.14)}
+    .book-tile h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:26px;font-weight:500;line-height:1.1;margin-bottom:8px}
+    .book-tile p{font-size:12px;margin-bottom:16px}
+    .badge{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;background:#e7dfd3;padding:7px 10px;width:max-content}
+
+    footer{background:#263923;color:#f5f0e8;padding:46px 0 28px}
+    .footer-grid{display:grid;grid-template-columns:1.2fr repeat(3,.8fr);gap:42px}
+    footer h4{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:400;margin-bottom:12px}
+    footer p,footer a{font-size:11px;line-height:1.9;color:inherit;text-decoration:none;opacity:.9}
+    .footer-bottom{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);font-size:10px;opacity:.7;text-align:center}
+
+    dialog{width:min(980px,94vw);max-height:90vh;border:0;padding:0;background:var(--cream);box-shadow:0 30px 80px rgba(0,0,0,.28)}
+    dialog::backdrop{background:rgba(25,20,17,.58)}
+    .modal-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--line)}
+    .modal-head h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;font-weight:400}
+    .close{border:0;background:none;font-size:28px;cursor:pointer;color:var(--brown)}
+    .toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:22px;overflow:auto;max-height:75vh}
+    .toc-grid img{width:100%;box-shadow:0 10px 24px rgba(0,0,0,.08)}
+
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr;min-height:auto}
+      .hero-visual{min-height:620px}
+      .hero-copy{padding:64px 7vw}
+      .interest-grid,.why,.future-grid{grid-template-columns:1fr}
+      .facts{grid-template-columns:repeat(2,1fr)}
+      .contents-grid{grid-template-columns:repeat(2,1fr)}
+      .content-item:nth-child(4n){border-right:1px solid var(--line)}
+      .content-item:nth-child(2n){border-right:none}
+      .book-tile{grid-template-columns:120px 1fr}
+      .book-tile img{width:120px}
+      .footer-grid{grid-template-columns:1fr 1fr}
     }
-
-    body {
-      background: #f7f2eb;
-      color: #4b3326;
-      font-family: "Montserrat", Arial, sans-serif;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .page {
-      min-height: 100vh;
-      padding: 38px 4vw 36px;
-    }
-
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 42px;
-    }
-
-    .brand {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 31px;
-      font-weight: 400;
-      letter-spacing: 10px;
-      text-transform: uppercase;
-    }
-
-    .header-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-    }
-
-    .icon-link {
-      width: 27px;
-      height: 27px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: opacity 0.2s ease;
-    }
-
-    .icon-link:hover {
-      opacity: 0.55;
-    }
-
-    .icon-link svg {
-      width: 23px;
-      height: 23px;
-    }
-
-    .menu {
-      width: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      cursor: default;
-    }
-
-    .menu span {
-      width: 100%;
-      height: 1px;
-      background: #4b3326;
-    }
-
-    .hero {
-      min-height: calc(100vh - 130px);
-      display: grid;
-      grid-template-columns: 40% 60%;
-      align-items: stretch;
-    }
-
-    .hero-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 55px 6vw 55px 1vw;
-    }
-
-    .hero-copy h1 {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(70px, 6.2vw, 115px);
-      line-height: 0.94;
-      font-weight: 300;
-      letter-spacing: -2px;
-      max-width: 600px;
-    }
-
-    .description {
-      margin-top: 58px;
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: clamp(18px, 1.25vw, 24px);
-      line-height: 1.55;
-      font-weight: 300;
-      max-width: 520px;
-    }
-
-    .cta {
-      margin-top: 42px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: fit-content;
-      min-width: 280px;
-      padding: 21px 34px;
-      background: #29442d;
-      color: #fff;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      font-size: 14px;
-      transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
-
-    .social-bottom {
-      margin-top: auto;
-      padding-top: 65px;
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: 15px;
-      line-height: 1.9;
-      font-weight: 300;
-    }
-
-    .social-bottom a {
-      text-decoration: none;
-    }
-
-    .social-bottom a:hover {
-      text-decoration: underline;
-    }
-
-    .dot {
-      padding: 0 11px;
-    }
-
-    .hero-image {
-      min-height: 760px;
-      overflow: hidden;
-      background: #e8ddce;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    @media (max-width: 900px) {
-      .page {
-        padding: 28px 20px 35px;
-      }
-
-      .header {
-        margin-bottom: 30px;
-      }
-
-      .brand {
-        font-size: 24px;
-        letter-spacing: 7px;
-      }
-
-      .header-links {
-        gap: 16px;
-      }
-
-      .hero {
-        min-height: auto;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .hero-copy {
-        padding: 45px 4px 45px;
-      }
-
-      .hero-copy h1 {
-        font-size: clamp(63px, 17vw, 92px);
-        max-width: 100%;
-      }
-
-      .description {
-        margin-top: 38px;
-        font-size: 18px;
-      }
-
-      .cta {
-        margin-top: 32px;
-        min-width: 0;
-        width: 100%;
-        max-width: 310px;
-      }
-
-      .social-bottom {
-        margin-top: 45px;
-        padding-top: 0;
-      }
-
-      .hero-image {
-        min-height: 0;
-        aspect-ratio: 1 / 1.1;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .page {
-        padding: 23px 17px 25px;
-      }
-
-      .brand {
-        font-size: 20px;
-        letter-spacing: 6px;
-      }
-
-      .hero-copy {
-        padding-top: 34px;
-      }
-
-      .hero-copy h1 {
-        font-size: 64px;
-        line-height: 0.95;
-      }
-
-      .description {
-        font-size: 16px;
-      }
-
-      .cta {
-        font-size: 12px;
-        letter-spacing: 4px;
-      }
-
-      .social-bottom {
-        font-size: 13px;
-      }
+    @media(max-width:700px){
+      .container{width:min(92vw,640px)}
+      .nav{height:66px}.brand{font-size:22px;letter-spacing:5px}.nav-links>a:not(.nav-cta){display:none}
+      .nav-cta{padding:10px 12px;font-size:9px}
+      .hero-visual{min-height:500px;padding:48px 12vw}.book-cover{width:min(300px,78%)}
+      .hero-copy{padding:48px 6vw}h1{font-size:56px}.subtitle{font-size:25px}
+      section{padding:64px 0}.section-title{font-size:40px}
+      .interest-grid{gap:30px}.interest-copy h2{font-size:42px}.tally-frame iframe{height:690px}
+      .contents-grid{grid-template-columns:1fr}.content-item{border-right:none!important;border-bottom:1px solid var(--line)}
+      .content-item:last-child{border-bottom:none}
+      .preview-arrow{display:none}
+      .why{gap:34px}.why h2{font-size:42px}.why-card{min-height:300px;padding:32px}
+      .future-grid{gap:16px}.book-tile{grid-template-columns:92px 1fr;padding:20px;gap:18px}.book-tile img{width:92px}
+      .footer-grid{grid-template-columns:1fr}.toc-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
-
 <body>
-
-  <div class="page">
-
-    <header class="header">
-
-      <div class="brand">
-        RESPONS
-      </div>
-
-      <div class="header-links">
-
-        <a
-          class="icon-link"
-          href="https://www.instagram.com/byrespons/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.7"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-            <circle cx="12" cy="12" r="4"></circle>
-            <circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"></circle>
-          </svg>
-        </a>
-
-        <a
-          class="icon-link"
-          href="https://www.tiktok.com/@byrespons"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="TikTok"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M14 4v10.1a4.1 4.1 0 1 1-3.2-4"></path>
-            <path d="M14 4c.7 2.3 2.4 3.7 5 4"></path>
-          </svg>
-        </a>
-
-        <div class="menu" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-      </div>
-
-    </header>
-
-
-    <main class="hero">
-
-      <section class="hero-copy">
-
-        <h1>
-          bøker som<br>
-          skaper en<br>
-          respons.
-        </h1>
-
-        <div class="description">
-          <p>Spørsmål verdt å svare på.</p>
-          <p>Historier verdt å ta vare på.</p>
-          <p>Responsen blir til bøker.</p>
-        </div>
-
-        <a
-          class="cta"
-          href="https://www.instagram.com/byrespons/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Kommer snart
-        </a>
-
-        <div class="social-bottom">
-
-          <div>
-            <a
-              href="https://www.instagram.com/byrespons/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-
-            <span class="dot">·</span>
-
-            <a
-              href="https://www.tiktok.com/@byrespons"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              TikTok
-            </a>
-          </div>
-
-          <div>
-            byrespons.no
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <section class="hero-image">
-
-        <img
-          src="Bok%200.png"
-          alt="Deg, gjennom våre øyne – Bok 0"
-        >
-
-      </section>
-
-    </main>
-
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top">RESPONS</a>
+    <nav class="nav-links" aria-label="Hovedmeny">
+      <a href="#bok0">Bok 0</a>
+      <a href="#sniktitt">Sniktitt</a>
+      <a href="#hvorfor">Om konseptet</a>
+      <a href="https://www.instagram.com/byrespons/" target="_blank" rel="noopener">Instagram</a>
+      <a class="nav-cta" href="#interesse">Meld interesse</a>
+    </nav>
   </div>
+</header>
 
+<main id="top">
+  <section class="hero" id="bok0">
+    <div class="hero-visual">
+      <div class="book-cover"><img src="assets/bok0-forside.jpeg" alt="Forsiden til Bok 0 – Deg, gjennom våre øyne"></div>
+    </div>
+    <div class="hero-copy">
+      <span class="eyebrow">Bok 0</span>
+      <h1>Deg,<br>gjennom våre øyne</h1>
+      <div class="subtitle">Før vi møtte deg.</div>
+      <p class="lead">En bok om tiden før du kom – fortalt av menneskene som allerede ventet på deg. Historier, minner, spådommer og små øyeblikk som er verdt å ta vare på.</p>
+      <div class="facts">
+        <div class="fact">A4-format</div>
+        <div class="fact">Ca. 90 sider</div>
+        <div class="fact">Hardcover</div>
+        <div class="fact">Laget for å fylles ut</div>
+      </div>
+      <div class="coming">
+        <h2>Kommer snart</h2>
+        <p>Vil du være blant de første som får vite når boka er klar?</p>
+        <a class="button" href="#interesse">Meld interesse</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="interest" id="interesse">
+    <div class="container interest-grid">
+      <div class="interest-copy">
+        <h2>Meld interesse</h2>
+        <p>Få beskjed når boka nærmer seg lansering – og vær blant de første som får vite når vi åpner for salg.</p>
+        <p class="tiny">Ingen spam. Bare oppdateringer når det faktisk skjer noe.</p>
+      </div>
+      <div class="tally-frame">
+        <iframe data-tally-src="https://tally.so/embed/yPaRPg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="620" frameborder="0" marginheight="0" marginwidth="0" title="Interesseskjema"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="innhold">
+    <div class="container">
+      <h2 class="section-title">Hva finner du i boka?</h2>
+      <p class="section-intro">Bok 0 følger tiden før dere møtes – fra historien om foreldrene dine til spådommer, babyshower, små minner og hilsener til framtiden.</p>
+      <div class="contents-grid">
+        <div class="content-item">Dagen vi fikk vite om deg</div>
+        <div class="content-item">Hvordan mamma og pappa møttes</div>
+        <div class="content-item">Ting du allerede har fått skylden for</div>
+        <div class="content-item">Våre spådommer</div>
+        <div class="content-item">Navnejakten</div>
+        <div class="content-item">Babyshower for deg</div>
+        <div class="content-item">Dette må du spørre oss om når du blir stor</div>
+        <div class="content-item">Og mye mer …</div>
+      </div>
+      <div class="contents-actions">
+        <a class="button outline" href="#sniktitt">Se en sniktitt</a>
+        <button class="button" type="button" onclick="document.getElementById('tocModal').showModal()">Se hele innholdsfortegnelsen</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="preview-section" id="sniktitt">
+    <div class="container">
+      <h2 class="section-title">Sniktitt i boka</h2>
+      <p class="section-intro">Noen av de ekte sidene du møter i Bok 0.</p>
+      <div class="preview-wrap">
+        <button class="preview-arrow left" aria-label="Forrige side" onclick="slidePreview(-1)">‹</button>
+        <div class="preview-track" id="previewTrack">
+          <article class="preview-card"><img src="assets/sniktitt-livet.png" alt="Dette var livet deres akkurat da"><p>Dette var livet deres akkurat da</p></article>
+          <article class="preview-card"><img src="assets/sniktitt-10-raske.png" alt="Foreldrene dine i 10 raske"><p>Foreldrene dine i 10 raske</p></article>
+          <article class="preview-card"><img src="assets/sniktitt-mamma.png" alt="Hvordan mamma hadde det"><p>Hvordan mamma hadde det</p></article>
+          <article class="preview-card"><img src="assets/sniktitt-foreldre.png" alt="Slik så foreldrene dine seg som foreldre"><p>Slik så foreldrene dine seg som foreldre</p></article>
+          <article class="preview-card"><img src="assets/sniktitt-mamma-pappa.png" alt="Mamma eller pappa"><p>Mamma eller pappa?</p></article>
+          <article class="preview-card"><img src="assets/sniktitt-problem.png" alt="Dette kommer til å bli et problem"><p>Dette kommer til å bli et problem</p></article>
+        </div>
+        <button class="preview-arrow right" aria-label="Neste side" onclick="slidePreview(1)">›</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="hvorfor">
+    <div class="container why">
+      <div>
+        <h2>Hvorfor Bok 0?</h2>
+        <div class="bigline">De fleste babybøker starter når barnet blir født. Denne starter før.</div>
+        <p>Bok 0 samler minnene, historiene, spådommene og de små øyeblikkene fra menneskene rundt barnet – mens alle fortsatt venter. En tidskapsel fra før historien egentlig begynte.</p>
+      </div>
+      <div class="why-card"><img src="assets/bok0-forside.jpeg" alt="Bok 0"></div>
+    </div>
+  </section>
+
+  <section class="future">
+    <div class="container future-grid">
+      <div class="future-intro">
+        <h2>Dette er bare begynnelsen.</h2>
+        <p>Responsen blir til bøker. Ulike historier, ulike mennesker – samme idé: spørsmål verdt å svare på og historier verdt å ta vare på.</p>
+      </div>
+      <article class="book-tile">
+        <img src="assets/bok0-forside.jpeg" alt="Bok 0">
+        <div><h3>Bok 0<br>Før vi møtte deg</h3><p>Historien før barnet kom.</p><span class="badge">Kommer snart</span></div>
+      </article>
+      <article class="book-tile">
+        <img src="assets/sann-er-du.jpeg" alt="Sånn er du, ifølge oss, selvfølgelig">
+        <div><h3>Sånn er du,<br>ifølge oss, selvfølgelig</h3><p>En bok om deg – fra menneskene som kjenner deg.</p><span class="badge">Kommer senere</span></div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><h4>RESPONS</h4><p>Spørsmål verdt å svare på.<br>Historier verdt å ta vare på.<br>Responsen blir til bøker.</p></div>
+    <div><h4>Utforsk</h4><p><a href="#bok0">Bok 0</a><br><a href="#sniktitt">Sniktitt</a><br><a href="#hvorfor">Om konseptet</a></p></div>
+    <div><h4>Følg oss</h4><p><a href="https://www.instagram.com/byrespons/" target="_blank" rel="noopener">Instagram</a><br><a href="https://www.tiktok.com/@byrespons" target="_blank" rel="noopener">TikTok</a></p></div>
+    <div><h4>Hold deg oppdatert</h4><p><a href="#interesse">Meld interesse</a><br><a href="https://byrespons.no">byrespons.no</a></p></div>
+  </div>
+  <div class="container footer-bottom">© 2026 byrespons.no</div>
+</footer>
+
+<dialog id="tocModal">
+  <div class="modal-head"><h3>Innholdsfortegnelse</h3><button class="close" aria-label="Lukk" onclick="document.getElementById('tocModal').close()">×</button></div>
+  <div class="toc-grid"><img src="assets/innhold-1.png" alt="Innholdsfortegnelse side 1"><img src="assets/innhold-2.png" alt="Innholdsfortegnelse side 2"></div>
+</dialog>
+
+<script>
+  function slidePreview(direction){
+    const track=document.getElementById('previewTrack');
+    const card=track.querySelector('.preview-card');
+    const amount=(card?.offsetWidth||300)+22;
+    track.scrollBy({left:direction*amount,behavior:'smooth'});
+  }
+  const modal=document.getElementById('tocModal');
+  modal.addEventListener('click',e=>{if(e.target===modal)modal.close();});
+  var d=document,w="https://tally.so/widgets/embed.js",v=function(){if(typeof Tally!=="undefined")Tally.loadEmbeds();else d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc})};
+  if(typeof Tally!=="undefined")v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s)}
+</script>
 </body>
 </html>
