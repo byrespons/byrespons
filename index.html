@@ -69,10 +69,15 @@
     .tally-frame{background:rgba(255,255,255,.55);border:1px solid rgba(75,51,38,.08);min-height:520px;box-shadow:0 10px 30px rgba(70,50,35,.05);overflow:hidden}
     .tally-frame iframe{width:100%;height:620px;border:0;background:transparent}
 
-    .contents-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .content-item{padding:28px 20px;text-align:center;border-right:1px solid var(--line);font-size:12px;min-height:96px;display:flex;align-items:center;justify-content:center}
-    .content-item:nth-child(4n){border-right:none}
-    .contents-actions{display:flex;justify-content:center;gap:12px;margin-top:32px;flex-wrap:wrap}
+    .chapter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:42px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .chapter-item{padding:36px 30px 34px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:220px}
+    .chapter-item:nth-child(3n){border-right:none}
+    .chapter-item:nth-last-child(-n+3){border-bottom:none}
+    .chapter-number{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:48px;line-height:1;color:var(--green);font-weight:300;margin-bottom:18px}
+    .chapter-item h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:25px;line-height:1.1;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-bottom:13px;color:var(--brown)}
+    .chapter-item p{font-size:13px;line-height:1.7;font-weight:300;max-width:280px}
+    .book-summary{text-align:center;font-family:"Cormorant Garamond",Georgia,serif;font-size:28px;line-height:1.3;margin:42px auto 0;max-width:650px;color:var(--green)}
+    .contents-actions{display:flex;justify-content:center;gap:12px;margin-top:26px;flex-wrap:wrap}
 
     .preview-section{background:#eee7dd;overflow:hidden}
     .preview-wrap{position:relative}
@@ -122,9 +127,12 @@
       .hero-copy{padding:64px 7vw}
       .interest-grid,.why,.future-grid{grid-template-columns:1fr}
       .facts{grid-template-columns:repeat(2,1fr)}
-      .contents-grid{grid-template-columns:repeat(2,1fr)}
-      .content-item:nth-child(4n){border-right:1px solid var(--line)}
-      .content-item:nth-child(2n){border-right:none}
+      .chapter-grid{grid-template-columns:repeat(2,1fr)}
+      .chapter-item{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+      .chapter-item:nth-child(3n){border-right:1px solid var(--line)}
+      .chapter-item:nth-child(2n){border-right:none}
+      .chapter-item:nth-last-child(-n+3){border-bottom:1px solid var(--line)}
+      .chapter-item:nth-last-child(-n+2){border-bottom:none}
       .book-tile{grid-template-columns:120px 1fr}
       .book-tile img{width:120px}
       .footer-grid{grid-template-columns:1fr 1fr}
@@ -137,8 +145,12 @@
       .hero-copy{padding:48px 6vw}h1{font-size:56px}.subtitle{font-size:25px}
       section{padding:64px 0}.section-title{font-size:40px}
       .interest-grid{gap:30px}.interest-copy h2{font-size:42px}.tally-frame iframe{height:690px}
-      .contents-grid{grid-template-columns:1fr}.content-item{border-right:none!important;border-bottom:1px solid var(--line)}
-      .content-item:last-child{border-bottom:none}
+      .chapter-grid{grid-template-columns:1fr}
+      .chapter-item{border-right:none!important;border-bottom:1px solid var(--line)!important;min-height:auto;padding:28px 10px}
+      .chapter-item:last-child{border-bottom:none!important}
+      .chapter-number{font-size:42px}
+      .chapter-item h3{font-size:22px}
+      .book-summary{font-size:25px;margin-top:34px}
       .preview-arrow{display:none}
       .why{gap:34px}.why h2{font-size:42px}.why-card{min-height:300px;padding:32px}
       .future-grid{gap:16px}.book-tile{grid-template-columns:92px 1fr;padding:20px;gap:18px}.book-tile img{width:92px}
@@ -200,17 +212,47 @@
   <section id="innhold">
     <div class="container">
       <h2 class="section-title">Hva finner du i boka?</h2>
-      <p class="section-intro">Bok 0 følger tiden før dere møtes – fra historien om foreldrene dine til spådommer, babyshower, små minner og hilsener til framtiden.</p>
-      <div class="contents-grid">
-        <div class="content-item">Dagen vi fikk vite om deg</div>
-        <div class="content-item">Hvordan mamma og pappa møttes</div>
-        <div class="content-item">Ting du allerede har fått skylden for</div>
-        <div class="content-item">Våre spådommer</div>
-        <div class="content-item">Navnejakten</div>
-        <div class="content-item">Babyshower for deg</div>
-        <div class="content-item">Dette må du spørre oss om når du blir stor</div>
-        <div class="content-item">Og mye mer …</div>
+      <p class="section-intro">Bok 0 følger historien før dere møtes – fra hvem foreldrene dine var før deg, til ventetiden, spådommene og minnene fra denne tiden.</p>
+
+      <div class="chapter-grid">
+        <article class="chapter-item">
+          <span class="chapter-number">01</span>
+          <h3>Før det ble deg</h3>
+          <p>Historien om mamma og pappa før de ble foreldre.</p>
+        </article>
+
+        <article class="chapter-item">
+          <span class="chapter-number">02</span>
+          <h3>Så fikk vi vite om deg</h3>
+          <p>De første reaksjonene, bildene og historiene fra da nyheten begynte å spre seg.</p>
+        </article>
+
+        <article class="chapter-item">
+          <span class="chapter-number">03</span>
+          <h3>Mens vi ventet på deg</h3>
+          <p>Graviditeten, små minner og livet mens alle ventet på deg.</p>
+        </article>
+
+        <article class="chapter-item">
+          <span class="chapter-number">04</span>
+          <h3>Hvem blir du?</h3>
+          <p>Spådommer, navnejakt og hvem du kanskje kommer til å ligne på.</p>
+        </article>
+
+        <article class="chapter-item">
+          <span class="chapter-number">05</span>
+          <h3>Snart møter vi deg</h3>
+          <p>Babyshower, fødebagen og den siste tiden før dere møtes.</p>
+        </article>
+
+        <article class="chapter-item">
+          <span class="chapter-number">06</span>
+          <h3>Til deg, før vi møtes</h3>
+          <p>Løfter, råd og historier du kan ta med deg videre.</p>
+        </article>
       </div>
+
+      <p class="book-summary">90 sider med historier, bilder, minner og spørsmål.</p>
       <div class="contents-actions">
         <a class="button outline" href="#sniktitt">Se en sniktitt</a>
         <button class="button" type="button" onclick="document.getElementById('tocModal').showModal()">Se hele innholdsfortegnelsen</button>
