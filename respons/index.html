@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Respons – din personlige minnebok</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<header>
+<button id="menu-toggle" class="menu-trigger" aria-label="Åpne meny" aria-haspopup="dialog" aria-controls="site-menu" aria-expanded="false">
+  <span class="menu-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+</button>
+<div class="header-brand">
+  <a href="./" class="brand" aria-label="Respons – forsiden">respons</a>
+</div>
+<nav class="account-nav" aria-label="Mine sider">
+<button id="cart" class="nav-button cart-button" aria-label="Handlevogn">
+  <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M2.5 4h3l2.7 10.5h10.7l2.2-7.5H6.3"></path>
+    <circle cx="9.2" cy="19" r="1.4"></circle>
+    <circle cx="17.8" cy="19" r="1.4"></circle>
+  </svg>
+  <span id="cart-count" hidden></span>
+</button>
+<button id="profile" class="nav-button profile" aria-label="Profil"><span class="person" aria-hidden="true"></span></button>
+</nav>
+</header>
+<dialog id="site-menu" class="site-drawer" aria-labelledby="site-menu-title">
+  <div class="drawer-heading">
+    <h2 id="site-menu-title">Meny</h2>
+    <button id="menu-close" class="secondary" aria-label="Lukk meny" autofocus>×</button>
+  </div>
+  <nav aria-label="Hovedmeny">
+    <h3>Anledninger</h3>
+    <div class="occasion-list" id="occasion-list"></div>
+    <div class="drawer-links">
+      <button class="drawer-link" data-menu-action="guide">Hvordan lager du din bok?</button>
+      <button class="drawer-link" data-menu-action="examples">Eksempler fra andre kunder</button>
+      <button class="drawer-link" data-menu-action="projects">Mine prosjekter</button>
+      <button class="drawer-link" data-menu-action="about">Om oss</button>
+      <button class="drawer-link" data-menu-action="profile">Profil</button>
+    </div>
+  </nav>
+</dialog>
+<dialog id="account-dialog" class="account-dialog" aria-labelledby="account-heading">
+  <div class="account-dialog-heading">
+    <h2 id="account-heading">Logg inn</h2>
+    <button id="account-close" class="secondary" type="button" aria-label="Lukk innlogging">×</button>
+  </div>
+  <div id="account-content"></div>
+  <p id="account-status" role="status"></p>
+</dialog>
+<main>
+<section id="home" class="hero">
+  <div class="home-intro">
+    <h1>Det du vil<br><em>ta vare på.</em></h1>
+    <p class="intro">En personlig minnebok, med dine ord og bilder. Alma hjelper deg å gi historien form, side for side.</p>
+    <div class="actions">
+      <button id="start">Oppdag minneboka <span aria-hidden="true">→</span></button>
+      <a id="example" href="#eksempel-elli">Bla i en ferdig bok</a>
+    </div>
+  </div>
+  <figure class="home-book">
+    <div class="home-book-object">
+      <div class="pregnancy-art" data-art-page="1" role="img" aria-label="Omslaget til Deg, gjennom våre øyne · Før vi møtte deg"></div>
+    </div>
+    <figcaption>Deg, gjennom våre øyne <span aria-hidden="true">·</span> Før vi møtte deg</figcaption>
+  </figure>
+</section>
+<section id="work" class="work" hidden>
+<div class="project-toolbar">
+  <p id="step" class="eyebrow"></p>
+  <div id="project-save" class="project-save print-hide" hidden>
+    <button id="add-photo-page" class="secondary" hidden>Legg til bildeside</button>
+    <button id="book-questions" class="secondary" hidden>Spørsmålsoversikt</button>
+    <button id="save-project" class="secondary">Lagre prosjekt</button>
+    <p id="save-confirmation" role="status"></p>
+  </div>
+</div>
+<div id="panel"></div>
+<p id="status" role="status"></p>
+</section>
+<section class="formats home-story" id="formats" aria-labelledby="home-story-title">
+  <div class="home-book-spread book-viewer pregnancy-viewer" data-binding="hard" role="region" aria-label="Eksempeloppslag fra minneboka til Elli">
+    <div class="book-stage"></div>
+  </div>
+  <div>
+    <h2 id="home-story-title">En gave barnet kan vokse inn i</h2>
+    <p>Hvordan var mamma og pappa før de ble foreldre? Samle bildene og historiene du vil at barnet skal få høre når det blir større.</p>
+    <a class="product-example-link" href="#eksempel-elli">Bla i boka til Elli <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+</main>
+<footer>Respons · Prøveversjon</footer>
+</body>
+</html>
